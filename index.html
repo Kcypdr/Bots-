@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Loja de Bots</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .countdown {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bots pelo menor preço </h1>
+        
+    </header>
+
+    <div class="countdown" id="countdown"></div>
+
+    <main>
+        <h2>Nossos Bots</h2>
+        <div class="bot">
+            <h3>Bot Simples</h3>
+            <p>Bot com comandos básicos de moderação/diversão/autorole</p>
+            <a href="https://discord.gg/36x4Zr8zFb" target="_blank"><button>Entrar no Servidor do Discord</button></a>
+        </div>
+
+        <div class="bot">
+            <h3>Bot 2</h3>
+            <p>Comandos especiais (solicite o orçamento antes para saber)</p>
+            <a href="https://discord.gg/36x4Zr8zFb" target="_blank"><button>Entrar no Servidor do Discord</button></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy;KcyBots</p>
+    </footer>
+
+    <script>
+        // Função para atualizar o cronômetro
+        function updateCountdown() {
+            const targetDate = new Date("2023-12-31T23:59:59"); // Defina a data alvo
+            const now = new Date();
+            const timeDifference = targetDate - now;
+            
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.innerHTML = `Promoção termina em: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // Atualiza a cada segundo
+            setTimeout(updateCountdown, 1000);
+        }
+
+        // Chama a função inicial
+        updateCountdown();
+    </script>
+</body>
+</html>
